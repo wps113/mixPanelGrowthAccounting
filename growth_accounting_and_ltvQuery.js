@@ -115,13 +115,13 @@ function main() {
               if (weeksBetween < 4) {
                 newRow["04 Week LTV"] = null;
               } else {
-                newRow["04 Week LTV"] = Math.round(valuesObj[valueKey] / row[key]['cohortSize']); //want average 
+                newRow["04 Week LTV"] = (valuesObj[valueKey] / row[key]['cohortSize']).toFixed(2); //want average 
               }
             } 
             else {
               var accumulatedValue = calculateTotalEventsForKey(valueKey, valuesObj);
               if (accumulatedValue) { //meaning total events are not null
-                newRow[valueKey] = Math.round(accumulatedValue / row[key]['cohortSize']); //want average 
+                newRow[valueKey] = (accumulatedValue / row[key]['cohortSize']).toFixed(2); //want average 
               } else {
                 newRow[valueKey] = null; //set 0 values to null for easier graphing
               }
