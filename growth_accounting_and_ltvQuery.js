@@ -1,5 +1,6 @@
 var params = {
   eventToMeasure: "App Open",
+  first_date_of_valid_data: '2015-10-01' //Please make this the first valid week of your data. Often your first week of MP data is janky due to testing etc.
   from_date: '2016-05-01', //the date you want to measure from
   to_date: '2016-07-21' //the date you want to measure to
 }
@@ -7,7 +8,7 @@ var params = {
 function main() {
   return join(
     Events({
-      from_date: '2015-10-18', //Please make this the first valid week of your data. Often your first week of MP data is janky due to testing etc.
+      from_date: params.first_date_of_valid_data,
       to_date:  params.to_date,
       event_selectors: [{event: params.eventToMeasure}] //This is where you'd specify event/data type you want to track
     }),
