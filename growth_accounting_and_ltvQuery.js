@@ -99,7 +99,7 @@ function main() {
       //need to turn into averages!!
     })
     .map(function (row) { //convert each week LTV value from aggregate to average
-      var newRow = {};    //also nullify 4Week LTV if 4 weeks have yet to pass
+      var newRow = {};
       for (var key in row) {
         if (key == "key") {
           newRow['Cohort Week'] = row.key[0]; //MP stores the row as key:val where key = groupBy value from previous groupby, and there can be multiple so we want index 0 of that. thus row.key.0!
